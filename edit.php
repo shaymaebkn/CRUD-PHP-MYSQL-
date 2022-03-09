@@ -24,7 +24,7 @@
                   editar data
 
                 </div>
-                <form action="editprocess.php" method="POST" class="p-4">
+                <form action="editprocess2.php?id=<?php echo $person->id; ?>" method="POST" class="p-4">
                     <div class="mb-3">
                     <input type="hidden" name="id" value="<?php echo $person ->id; ?>">
                         <label class="form-label" >Name:</label>
@@ -36,7 +36,6 @@
                         <label class="form-label" >Last name:</label>
                         <input type="text" class="form-control" name="last-name"
                         value="<?php echo $person->last_name; ?>">
-
                     </div>
                     <div class="mb-3">
                         <label class="form-label" >Date:</label>

@@ -1,7 +1,7 @@
 <?php
     print_r($_POST);
     if(!isset($_POST['id'])){
-        header('Location: index.php?mensaje=mamak');
+        header('Location: index.php?mensaje=EROOR');
     }
 
     include 'model/connect.php';
@@ -17,15 +17,15 @@
     $statement = $bd->prepare("UPDATE `persons` SET  `first_name` = `?` ,
      `last_name`= `?` , `date` = `?`, `department`=`?`, `salary`=`?`, `function` = `?`,
       `picture` = `?` WHERE `id`= `?`;");
-    $result = $statement->execute([$id,$first_name,$last_name,$date,$department,
-    $salary,$function,$pic]);
+    $result = $statement->execute([$first_name,$last_name,$date,$department,
+    $salary,$function,$pic,$id]);
 
-    if ($result === TRUE) {
+     if ($result === TRUE) {
         header('Location: index.php?mensaje=editado');
 
-    } else {
-        header('Location: index.php?mensaje=error');
-        exit();
+     } else {
+         header('Location: index.php?mensaje=erroreditproceso');
+         exit();
     }
     
 ?>
