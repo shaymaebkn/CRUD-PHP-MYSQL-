@@ -7,11 +7,10 @@
     include 'model/connect.php';
     $id = $_GET['id'];
 
-    $statment = $bd->prepare("DELETE FROM `persons` WHERE id = ?;");
-    $result = $statment->execute([$id]);
-
-    if ($result === TRUE) {
-        header('Location: index.php?mensaje=eliminado');
+    $sql = "DELETE FROM persons where id='$id'";
+    $query = mysqli_query($con,$sql);
+    if ($query === TRUE) {
+        header('Location: index.php?mensaje=deleted');
     } else {
         header('Location: index.php?mensaje=error');
     }

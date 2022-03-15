@@ -18,12 +18,16 @@
     $function = $_POST['function'];
     $pic = $_POST['picture'];
 
-    $statement = $bd->prepare("INSERT INTO `persons`( `first_name`, `last_name`, `date`, `department`, `salary`, `function`, `picture`) 
-                               VALUES (?,?,?,?,?,?,?)");
-    $result = $statement->execute([$first_name,$last_name,$date,$department,$salary,$function,$pic]);
+    // $statement = $bd->prepare("INSERT INTO `persons`( `first_name`, `last_name`, `date`, `department`, `salary`, `function`, `picture`) 
+    //                            VALUES (?,?,?,?,?,?,?)");
+    // $result = $statement->execute([$first_name,$last_name,$date,$department,$salary,$function,$pic]);
 
-    if ($result === TRUE) {
-        header('Location: index.php?mensaje=registrado');
+    $requete = "INSERT INTO `persons`( `first_name`, `last_name`, `date`, `department`, `salary`, `function`, `picture`) 
+     VALUES ($first_name,$last_name,$date,$department,$salary,$function,$pic)";
+    $query = mysqli_query($con,$requete);
+
+    if ($query === TRUE) {
+        header('Location: index.php?mensaje=register');
     } else {
         header('Location: index.php?mensaje=error');
         exit();

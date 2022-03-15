@@ -4,8 +4,11 @@
     ?>
      <?php 
     include_once 'model/connect.php';
-    $statement = $bd -> query("SELECT * FROM `persons`");
-    $person = $statement->fetchAll(PDO::FETCH_OBJ);
+    // $statement = $bd -> query("SELECT * FROM `persons`");
+    // $person = $statement->fetchAll(PDO::FETCH_OBJ);
+
+    $requete = "SELECT * FROM `persons`" ;
+    $query = mysqli_query($con,$requete);
     ?>
 
 
@@ -33,21 +36,22 @@
                       </thead>
                       <tbody>
                       <?php 
-                                foreach($person as $data){ 
+                                foreach($query as $data){ 
                     ?>
                           <tr>
-                              <td scope="row"><?php echo $data->id; ?></td>
-                              <td><?php echo $data->first_name; ?></td>
-                              <td><?php echo $data->last_name; ?></td>
-                              <td><?php echo $data->date; ?></td>
-                              <td><?php echo $data->department; ?></td>
-                              <td><?php echo $data->salary; ?></td>
-                              <td><?php echo $data->function; ?></td>
+                              <td scope="row"><?php echo $data['id']; ?></td>
+                              <td><?php echo $data['first_name']; ?></td>
+                              <td><?php echo $data['last_name']; ?></td>
+                              <td><?php echo $data['date']; ?></td>
+                              <td><?php echo $data['department']; ?></td>
+                              <td><?php echo $data['salary']; ?></td>
+                              <td><?php echo $data['function']; ?></td>
                               <td>
-                              <img src="pics/<?php echo $data->picture; ?>" alt="this is a employees photo" width="35px" height="35px" style = "border-radius:50% ;"></td>
+                              <img src="<?php echo $data['picture']; ?>" alt="" width="35px" height="35px" style = "border-radius:50% ;"></td>
                             <td>
-                              <td><a class="text-success" href="edit.php?id=<?php echo $data->id; ?>"><i class="bi bi-pencil-square"></i></a></td>
-                                <td><a onclick="return confirm('are you sure you wanna delete this row?');" class="text-danger" href="delete.php?id=<?php echo $data->id; ?>"><i class="bi bi-trash"></i></a></td>
+                              <a class="text-success" href="edit.php?id=<?php echo $data['id']; ?>"><i class="bi bi-pencil-square"></i></a>
+                                <a onclick="return confirm('are you sure you wanna delete this row?');" class="text-danger" href="delete.php?id=<?php echo $data['id']; ?>"><i class="bi bi-trash"></i></a>
+                            </td>
                           </tr>
                           <?php 
                                 }
@@ -95,21 +99,21 @@
                         <input type="text" class="form-control" name="function">
 
                     </div>
-                    <!-- <div class="mb-3">
+                    <div class="mb-3">
                         <label class="form-label" >picture:</label>
                         <input type="url"  name="picture"  id="7a" class="form-control" placeholder=" your photo URL"  >
 
-                    </div> -->
-                    <div class="input-group">
+                    </div>
+                    <!-- <div class="input-group">
                     <span class="input-group-text">
                         <i class="bi bi-image"></i>
                     </span>
-                    <input type="file"  name="picture"  id="7a" class="form-control"  >
+                    <input type="URL"  name="picture"  id="7a" class="form-control"  >
                     <span class="input-group-text">
                         <i class="bi bi-arrow-counterclockwise"></i>
                         </span>
                     </div>
-                    
+                     -->
                     <div class="d-grid">
                         <input type="hidden" name="oculto" value="1">
                         <input type="submit" class="btn btn-primary" value="Register">
