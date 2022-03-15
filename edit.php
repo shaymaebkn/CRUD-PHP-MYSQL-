@@ -9,18 +9,14 @@
     include_once 'model/connect.php';
     $id = $_GET['id'];
 
-    $requete = "SELECT * FROM `persons`" ;
+    $requete = "SELECT * FROM `persons`";
     $query = mysqli_query($con,$requete);
-
-  
 
     // $statement = $bd->prepare("SELECT * FROM persons WHERE id = ?;");
     // $statement->execute([$id]);
     // $person = $statement->fetch(PDO::FETCH_OBJ);
     //print_r($persona);
-    
 ?>
-
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-4">
@@ -76,7 +72,7 @@
                     </div>
                     <div class="d-grid">
                         
-                        <input type="submit" class="btn btn-primary" value="edit">
+                        <input type="submit" class="btn btn-primary" name="edit" value="edit">
                     </div>
                     
                 </form>
@@ -85,7 +81,4 @@
         </div>
     </div>
 </div>
-
-
-
 <?php  include 'template/footer.php' ?>

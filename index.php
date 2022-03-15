@@ -4,15 +4,10 @@
     ?>
      <?php 
     include_once 'model/connect.php';
-    // $statement = $bd -> query("SELECT * FROM `persons`");
-    // $person = $statement->fetchAll(PDO::FETCH_OBJ);
 
     $requete = "SELECT * FROM `persons`" ;
     $query = mysqli_query($con,$requete);
     ?>
-
-
- 
   <div class="container mt-7">
       <div class="row justify-content-center">
           <div class="col-md-7">
@@ -28,16 +23,14 @@
                             <th scope="col">Departement</th>
                             <th scope="col">Salary</th>
                             <th scope="col">Function</th>
-
                             <th scope="col "colspane="2">picture</th>
                             <th scope="col">operations</th>
-                            
                           </tr>
                       </thead>
                       <tbody>
-                      <?php 
+                        <?php 
                                 foreach($query as $data){ 
-                    ?>
+                        ?>
                           <tr>
                               <td scope="row"><?php echo $data['id']; ?></td>
                               <td><?php echo $data['first_name']; ?></td>
@@ -58,9 +51,7 @@
                             ?>
                       </tbody>
                   </table>
-
               </div>
-
           </div>
         <div class="col-md-7">
             <div class="card">
@@ -69,6 +60,7 @@
 
                 </div>
                 <form action="register.php" method="POST" class="p-4">
+                    <input type="hidden" name="id" >
                     <div class="mb-3">
                         <label class="form-label" >Name:</label>
                         <input type="text" class="form-control" name="first-name">
@@ -104,19 +96,9 @@
                         <input type="url"  name="picture"  id="7a" class="form-control" placeholder=" your photo URL"  >
 
                     </div>
-                    <!-- <div class="input-group">
-                    <span class="input-group-text">
-                        <i class="bi bi-image"></i>
-                    </span>
-                    <input type="URL"  name="picture"  id="7a" class="form-control"  >
-                    <span class="input-group-text">
-                        <i class="bi bi-arrow-counterclockwise"></i>
-                        </span>
-                    </div>
-                     -->
                     <div class="d-grid">
-                        <input type="hidden" name="oculto" value="1">
-                        <input type="submit" class="btn btn-primary" value="Register">
+                        <!-- <input type="hidden" name="oculto" value="1"> -->
+                        <input type="submit" class="btn btn-primary" name="add" value="Register">
                     </div>
                     
 

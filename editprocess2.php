@@ -1,9 +1,7 @@
 <?php
+if(!isset($_POST['add'])){
 
-// print_r($_POST);
-if(!isset($_POST['id'])){
-    header('Location: index.php?mensaje=EROORID');
-} 
+   
 
     include_once 'model/connect.php';
     $id = $_POST['id'];
@@ -24,21 +22,11 @@ if(!isset($_POST['id'])){
     `department`='$department',`salary`='$salary',`function`='$function',`picture`='$pic' WHERE `id`='$id'";
     $q=mysqli_query($con,$sql);
 
-    // if(isset($q)){
-    // echo"khdmat asata";
-    // } 
-    if ($q === TRUE) {
+    // if ($q === TRUE) {
         header('Location: index.php?mensaje=register');
-    } else {
-        header('Location: index.php?mensaje=error');
-        exit();
-    }
+   
+} else {
+     header('Location: index.php?mensaje=EROOR');
+}
 
-
-    // if ($result === TRUE) {
-    //     header('Location: index.php?mensaje=registrado');
-    // } else {
-    //     header('Location: index.php?mensaje=error');
-    //     exit();
-    // }
 ?>
