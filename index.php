@@ -8,6 +8,7 @@
     $requete = "SELECT * FROM `persons`" ;
     $query = mysqli_query($con,$requete);
     ?>
+    
   <div class="container mt-7">
       <div class="row justify-content-center">
           <div class="col-md-7">
@@ -120,62 +121,3 @@
     include 'template/footer.php'
     ?>
 
-
-
-<!-- <h2></h2>
-                    <div class="col-md-4">
-                        <label for="validationCustom01" name="nom" class="form-label">Nom</label>
-                        <input type="text" class="form-control" id="validationCustom01" required>
-                        <div class="valid-feedback">
-                        Looks good!
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="validationCustom02" class="form-label">Prenom</label>
-                        <input type="text" class="form-control" id="validationCustom02" required>
-                        <div class="valid-feedback">
-                        Looks good!
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="validationCustomUsername" class="form-label">Matricule</label>
-                        <div class="input-group has-validation">
-
-                        <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend"
-                            required>
-                        <div class="invalid-feedback">
-                            Please choose a username.
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="validationCustom03" class="form-label">Departement</label>
-                        <input type="text" class="form-control" id="validationCustom03" required>
-                        <div class="invalid-feedback">
-                        Please provide a valid city.
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <label for="validationCustom04" class="form-label">Salaire</label>
-                        <input type="text" class="form-control" id="validationCustom04" required>
-
-                        <div class="invalid-feedback">
-                        Please select a valid state.
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <label for="validationCustom05" class="form-label">Fonction</label>
-                        <input type="text" class="form-control" id="validationCustom05" required>
-                        <div class="invalid-feedback">
-                        Please provide a valid zip.
-                        </div>
-                    </div>
-                    <div class="mb-3" style="width: 400px;">
-                        <label for="formFile" class="form-label">photo</label>
-                        <input class="form-control" type="file" id="formFile">
-                    </div>
-                    <div class="col-12">
-                        <button class="btn btn-primary" type="submit">Ajouter</button>
-                    </div>
-                </form> -->
-                  

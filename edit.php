@@ -66,7 +66,7 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label" >picture:</label>
-                        <input type="file" class="form-control" name="picture"
+                        <input type="URL" class="form-control" name="picture"
                         value="<?php echo $person['picture']; ?>">
 
                     </div>
