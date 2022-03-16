@@ -98,7 +98,6 @@
 
                     </div>
                     <div class="d-grid">
-                        <!-- <input type="hidden" name="oculto" value="1"> -->
                         <input type="submit" class="btn btn-primary" name="add" value="Register">
                     </div>
                     
