@@ -79,7 +79,7 @@
                     </div>
                     <div class="d-grid">
                         
-                        <input type="submit" class="btn btn-primary" name="edit" value="edit">
+                        <input onclick="return confirm('are you sure you wanna delete this row?');" type="submit" class="btn btn-primary" name="edit" value="edit">
                     </div>
                     
                 </form>
